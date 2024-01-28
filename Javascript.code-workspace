@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "Javascript",
+			"path": "C:/Users/benit/OneDrive/Documentos/Programación/Javascript"
+		},
+		{
+			"name": "Python",
+			"path": "C:/Users/benit/OneDrive/Documentos/Programación/Python"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Javascript"
+	}
+}

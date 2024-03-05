@@ -1,17 +1,13 @@
-Objetivos Generales:
-Codificar la funcionalidad inicial del simulador: Se implementó la lógica necesaria para realizar simulaciones de créditos. Esto incluye la captura de datos del usuario, el cálculo de pagos mensuales, y la generación de una tabla de amortización.
+Uso de JSON y Storage:
+Se utilizó JSON para almacenar y recuperar datos del formulario y del estado del modo (diurno/nocturno) en el localStorage.
+Se almacenaron los datos del formulario en el localStorage utilizando JSON.stringify() y se recuperaron utilizando JSON.parse() para garantizar la persistencia de los datos entre sesiones del usuario.
+Se utilizó el localStorage para almacenar el estado del modo (diurno/nocturno) y recuperarlo al cargar la página.
 
-Identificar el flujo de trabajo del script en términos de captura de entradas, procesamiento esencial del simulador y notificación de resultados: Esta actualización de la pre-entrega1 captura entradas mediante formularios HTML, realiza los cálculos necesarios en JavaScript, y muestra los resultados tanto en forma de resumen como en una tabla de amortización detallada.
+Modificación del DOM:
+Se realizaron modificaciones en el DOM para reflejar el estado del modo (diurno/nocturno) al cargar la página.
+Se actualizaron los elementos HTML, como el texto del botón de alternar modo, según el estado del modo almacenado en el localStorage.
+Se generaron y mostraron dinámicamente las tablas de amortización y otros elementos HTML con los resultados del procesamiento del simulador.
 
-Formato:
-Página HTML y código fuente en JavaScript: Se actualizó tanto la estructura HTML como el código JavaScript necesario para el simulador.
-
-Objetivos Específicos:
-
-Capturar entradas mediante prompt(): Se utilizan y actualizan formularios HTML para una mejor experiencia del usuario.
-
-Declarar variables y objetos necesarios para simular el proceso seleccionado: Se definieron las variables y realizaron los cálculos necesarios para el simulador de créditos.
-
-Crear funciones y/o métodos para realizar operaciones (suma, resta, concatenación, división, porcentaje, etc.): Se implementaron funciones para calcular pagos mensuales y generar tablas de amortización.
-
-Efectuar una salida, que es el resultado de los datos procesados, la cual puede hacerse por alert() o console.log(): En lugar de utilizar alert() o console.log(), se optó por mostrar los resultados directamente en la página web, lo cual es preferible para la usabilidad, pensando en entregas futuras.
+Detección de eventos de usuario:
+Se implementaron eventos de usuario, como clics en botones y envíos de formularios, para activar funciones correspondientes, como alternar el modo diurno/nocturno y realizar el cálculo del préstamo.
+Se utilizaron eventos de usuario para detectar interacciones del usuario, como clics en botones, y para realizar acciones específicas, como mostrar u ocultar la tabla de amortización.

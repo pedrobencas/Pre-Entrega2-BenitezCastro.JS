@@ -1,19 +1,43 @@
 body {
     font-family: Arial, sans-serif;
-    margin:20px;
+    margin: 20px;
+    background-color: #f4f4f4; /* Color de fondo en modo diurno */
+    color: #333; /* Color de texto en modo diurno */
+    transition: background-color 0.5s, color 0.5s; /* Transición suave al cambiar entre modos */
 }
+
+/* Estilos para el modo nocturno */
+body.dark-mode {
+    background-color: #333; /* Color de fondo en modo nocturno */
+    color: #f4f4f4; /* Color de texto en modo nocturno */
+}
+
 form {
     margin-bottom: 20px;
 }
+
 label {
     display: block;
     margin-bottom: 5px;
 }
+
 input {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
+    background-color: #fff; /* Color de fondo para inputs en modo diurno */
+    color: #333; /* Color de texto para inputs en modo diurno */
+    border: 1px solid #ccc; /* Borde para inputs en modo diurno */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Transición suave al cambiar entre modos */
 }
+
+/* Estilos para inputs en modo nocturno */
+body.dark-mode input {
+    background-color: #444; /* Color de fondo para inputs en modo nocturno */
+    color: #f4f4f4; /* Color de texto para inputs en modo nocturno */
+    border-color: #666; /* Borde para inputs en modo nocturno */
+}
+
 button {
     background-color: #4CAF50;
     color: white;
@@ -22,15 +46,16 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
+
 button:hover {
     background-color: #45a049;
 }
+
 #result {    
-    border: 1px solid #ccc;
     padding: 10px;
-    border-radius: 5px;
 }
-.discount-message{
+
+.discount-message {
     background-color: #4CAF50;
     color: white;
     padding: 16px;
@@ -38,7 +63,80 @@ button:hover {
     margin-top: 10px;
     font-size: 18px;
 }
-.amortization-table{
+
+.amortization-table {
+    width: 100%;
+    border-collapse: collapse;
     margin-top: 20px;
-    border-spacing: 20px
 }
+
+.amortization-table th,
+.amortization-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.card-container {
+    display: flex; /* Para mostrar las tarjetas horizontalmente */
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en filas si el espacio es insuficiente */
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer; /* Hace que toda la tarjeta sea clickeable */
+    width: calc(33.33% - 20px); /* Ajusta el ancho de cada tarjeta para que haya tres tarjetas por fila con espacios */
+    box-sizing: border-box; /* Asegura que el padding y el borde no afecten el ancho real de la tarjeta */
+    background-color: #fff; /* Color de fondo para tarjetas en modo diurno */
+    color: #333; /* Color de texto para tarjetas en modo diurno */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave al cambiar entre modos */
+}
+
+/* Estilos para tarjetas en modo nocturno */
+body.dark-mode .card {
+    background-color: #444; /* Color de fondo para tarjetas en modo nocturno */
+    color: #f4f4f4; /* Color de texto para tarjetas en modo nocturno */
+}
+
+.card.selected {
+    border-color: #4CAF50; /* Color de resaltado cuando se selecciona una tarjeta */
+}
+
+.collapse-message {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* Hace que el botón ocupe todo el ancho de la tarjeta */
+    width: 100%;
+    text-align: center; /* Centra el texto en el botón */
+}
+
+.collapse-message:hover {
+    background-color: #45a049;
+}
+
+.amortization-schedule {
+    display: none; /* Inicialmente oculta la tabla de amortización */
+    padding-top: 10px;
+}
+
+/* Estilos para el indicador de carga */
+#loadingIndicator {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Estilos para el botón de cambio de modo */
+#mode-toggle-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+

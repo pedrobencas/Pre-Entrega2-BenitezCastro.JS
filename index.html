@@ -8,21 +8,64 @@
 </head>
 <body>
     <h1>Simulador de Créditos BankCas</h1>
+    <button id="mode-toggle-button">Modo Nocturno</button>
     <form id="credit-simulator-form">
         <label for="amount">Monto del crédito:</label>
-        <input type="number" id="amount" pattern="\d*" min="500000" step="1000" required>
+        <input type="number" id="amount" name="amount" pattern="\d*" min="500000" step="1000" required>
 
         <label for="interest-rate">Tasa de interes anual (%):</label>
-        <input type="number" id="interest-rate" min="0" step="0.1" required>
+        <input type="number" id="interest-rate" name="interest-rate" min="0" step="0.1" required>
 
         <label for="months">Plazo (meses):</label>
-        <input type="number" id="months" min="1" max="60" required>
+        <input type="number" id="months" name="months" min="1" max="60" required>
 
         <button type="submit">Simular</button>
     </form>
-    <section id="result"></section>
+    <section id="result" style="display: none;">
+        <div class="card-container">
+            <div class="card" id="card1" onclick="selectCard('card1')">
+                <h2>Plazo: 12 meses</h2>
+                <p>Monto del crédito: <span id="twelve-months-credit-amount"></span></p>
+                <p>Tasa de Interés: <span id="twelve-months-interest-rate"></span>%</p>
+                <p>Tasa de Interés ajustada: <span id="twelve-months-adjusted-interest-rate"></span>%</p>
+                <p>Pago mensual estimado: <span id="twelve-months-payment"></span></p>
+                <p>Valor Total Crédito: <span id="twelve-months-total-credit-value"></span></p>
+                <p>CAE: <span id="twelve-months-cae"></span>%</p>
+                <div class="collapse-message">Haz clic aquí para ver la tabla de amortización</div>
+                <div id="twelve-months-amortization" class="amortization-schedule" style="display: none;">
+                    <!-- La tabla de amortización a 12 meses se mostrará aquí -->
+                </div>
+            </div>
+            <div class="card" id="card2" onclick="selectCard('card2')">
+                <h2>Plazo: Solicitado por el usuario</h2>
+                <p>Monto del crédito: <span id="user-months-credit-amount"></span></p>
+                <p>Tasa de Interés: <span id="user-months-interest-rate"></span>%</p>
+                <p>Tasa de Interés ajustada: <span id="user-months-adjusted-interest-rate"></span>%</p>
+                <p>Pago mensual estimado: <span id="user-months-payment"></span></p>
+                <p>Valor Total Crédito: <span id="user-months-total-credit-value"></span></p>
+                <p>CAE: <span id="user-months-cae"></span>%</p>
+                <div class="collapse-message">Haz clic aquí para ver la tabla de amortización</div>
+                <div id="user-months-amortization" class="amortization-schedule" style="display: none;">
+                    <!-- La tabla de amortización del usuario se mostrará aquí -->
+                </div>
+            </div>
+            <div class="card" id="card3" onclick="selectCard('card3')">
+                <h2>Plazo: 60 meses</h2>
+                <p>Monto del crédito: <span id="sixty-months-credit-amount"></span></p>
+                <p>Tasa de Interés: <span id="sixty-months-interest-rate"></span>%</p>
+                <p>Tasa de Interés ajustada: <span id="sixty-months-adjusted-interest-rate"></span>%</p>
+                <p>Pago mensual estimado: <span id="sixty-months-payment"></span></p>
+                <p>Valor Total Crédito: <span id="sixty-months-total-credit-value"></span></p>
+                <p>CAE: <span id="sixty-months-cae"></span>%</p>
+                <div class="collapse-message">Haz clic aquí para ver la tabla de amortización</div>
+                <div id="sixty-months-amortization" class="amortization-schedule" style="display: none;">
+                    <!-- La tabla de amortización a 60 meses se mostrará aquí -->
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="loadingIndicator" style="display: none;">Calculando...</section>
-    <script src="/javascript/script.js"></script>
-    
+    <script src="/js/script.js"></script>
 </body>
 </html>
+
